@@ -1,0 +1,101 @@
+/* Slideshow.module.css */
+
+.container {
+  padding-top: 48px;
+  padding-bottom: 24px;
+  padding-left: 32px;
+  margin-top: 28px;
+  min-height: 415px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobileText {
+  display: none;
+}
+
+.slideshowWrapper {
+  position: relative;
+  max-height: 432px;
+  height: 432px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.prevImage, .nextImage {
+  position: relative;
+  width: 137px;
+  height: 302px;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.mainImageWrapper {
+  position: relative;
+  width: calc(100% - 274px);
+  height: 302px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  z-index: 10;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.textContent {
+  position: absolute;
+  top: 118px;
+  left: 63.5px;
+  width: 689px;
+  height: 196px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  z-index: 20;
+}
+
+.dotsWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 57px;
+}
+
+.dotButton {
+  height: 8px;
+  width: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dotButtonActive {
+  background-color: #2140D4;
+}
+
+.dotButtonInactive {
+  background-color: rgba(190, 208, 255, 0.5);
+}
+
+.dotButtonInactive:hover {
+  background-color: rgba(33, 64, 212, 0.3);
+}
