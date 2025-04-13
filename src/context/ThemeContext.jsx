@@ -4,33 +4,38 @@ import { createContext, useContext, useState, useEffect } from 'react';
 
 const ThemeContext = createContext();
 
-export function ThemeProvider({ children }) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+export function ThemeProvider({ children, initialTheme }) {
+  const [isDarkMode, setIsDarkMode] = useState(initialTheme === 'dark');
+  const [mounted, setMounted] = useState(false); 
 
   useEffect(() => {
-    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-    
-    if (savedDarkMode) {
-      document.documentElement.classList.add('dark');
-      setIsDarkMode(true);
-    } else {
-      document.documentElement.classList.remove('dark');
-      setIsDarkMode(false);
+    const savedDarkMode = localStorage.getItem('darkMode');
+    if (savedDarkMode !== null) {
+      setIsDarkMode(JSON.parse(savedDarkMode));
     }
+    setMounted(true);
   }, []);
 
-  const toggleDarkMode = () => {
-    const newDarkMode = !isDarkMode;
-    setIsDarkMode(newDarkMode);
-    
-    if (newDarkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('darkMode', 'true');
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
     } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('darkMode', 'false');
+      document.body.classList.remove('dark-mode');
     }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((prevMode) => {
+      const newMode = !prevMode;
+
+      localStorage.setItem('darkMode', JSON.stringify(newMode));
+      document.cookie = `theme=${newMode ? 'dark' : 'light'}; path=/; max-age=31536000`;
+
+      return newMode;
+    });
   };
+
+  if (!mounted) return null; 
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
@@ -39,10 +44,4 @@ export function ThemeProvider({ children }) {
   );
 }
 
-export function useTheme() {
-  const context = useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
-}
+export const useTheme = () => useContext(ThemeContext);

@@ -65,7 +65,7 @@ export default function Slideshow() {
   const nextIndex = (current + 1) % slides.length;
 
   return (
-    <div className="py-[48px] pb-[24px] px-[32px] mt-7 md:mt-0 md:px-0 min-h-[415px] md:h-auto ">
+    <div className="py-[48px] pb-[24px] px-[32px] mt-7 md:mt-15 md:px-0 min-h-[415px] md:h-auto ">
       <div className="w-full min-w-[311px] md:max-w-[1110px] md:mx-auto flex flex-col gap-[20px] md:gap-[48px]">
         <div className="md:hidden h-[135.15px] flex flex-col gap-[10.15px]">
           <h2 className="text-[36px] leading-[100%] tracking-[-1%] font-black mb-2 drop-shadow-md">
@@ -87,7 +87,7 @@ export default function Slideshow() {
               src={slides[prevIndex].image}
               alt={slides[prevIndex].alt}
               fill
-               sizes="(max-width: 768px) 20px, 137px"
+              sizes="(max-width: 768px) 20px, 137px"
               className="object-cover rounded-[20px]"
             />
           </div>
@@ -110,12 +110,12 @@ export default function Slideshow() {
                   <div className="absolute inset-0 bg-black/40 rounded-[17.76px] md:rounded-[56px] z-10" />
 
                   {/* Image */}
-                  <Image
+                  <img
                     src={slides[current].image}
                     alt={slides[current].alt}
                     fill
-                     sizes="(max-width: 768px) 20px, 137px"
-                    className="object-cover rounded-[17.76px] md:rounded-[56px]"
+                    quality={100}
+                    className="object-cover h-full w-full"
                   />
 
                   {/* Text content */}
@@ -143,7 +143,7 @@ export default function Slideshow() {
               src={slides[nextIndex].image}
               alt={slides[nextIndex].alt}
               fill
-               sizes="(max-width: 768px) 20px, 137px"
+              sizes="(max-width: 768px) 20px, 137px"
               className="object-cover rounded-[20px]"
             />
           </div>
@@ -157,8 +157,8 @@ export default function Slideshow() {
               key={index}
               onClick={() => goToSlide(index)}
               className={`md:h-1 h-2 w-9 rounded-full transition-all cursor-pointer duration-300 ${current === index
-                  ? "bg-[#2140D4]"
-                  : "bg-[#BED0FF]/50 hover:bg-[#2140D4]/30"
+                ? "bg-[#2140D4]"
+                : "bg-[#BED0FF]/50 hover:bg-[#2140D4]/30"
                 }`}
             />
           ))}

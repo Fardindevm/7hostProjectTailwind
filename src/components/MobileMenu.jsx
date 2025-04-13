@@ -55,7 +55,7 @@ export default function MobileMenu() {
             />
 
             <div className="relative z-10 flex flex-col min-h-screen px-8 pt-24">
-              <div className="flex flex-col gap-[32px] mt-12 font-medium text-[#1A1A1A]">
+              <div className="flex flex-col gap-[32px] mt-12 font-medium text-[var(--linkLightmode)]">
                 <Link
                   href="/#Feature1"
                   onClick={handleLinkClick}
@@ -89,12 +89,12 @@ export default function MobileMenu() {
               <div className="flex flex-col mt-auto mb-8 gap-[20px]">
                 <Link href="/" onClick={handleLinkClick}>
                   <button className="w-full py-4 rounded-full bg-[#2140D4] text-white font-semibold hover:bg-[#2140D4]/80 transition-colors">
-                    <span>Get Started</span>
+                    <span className="text-[var(--atpText)] ">Get Started</span>
                   </button>
                 </Link>
                 <Link href="/" onClick={handleLinkClick}>
                   <button className="w-full py-4 text-[#4B5563] hover:opacity-70 transition-opacity">
-                    <span>Sign In</span>
+                    <span className="text-black">Sign In</span>
                   </button>
                 </Link>
               </div>

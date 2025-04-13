@@ -1,6 +1,6 @@
 
 //app/currencies/@modal/(..)currencies/[symbol]/page.js
-import CoinModalClient from "@/components/CoinModalClient";
+import CoinModalClient from "../../../Components/CoinModalClient";
 
 export default async function CurrencyModal({ params }) {
   const { symbol } = params;

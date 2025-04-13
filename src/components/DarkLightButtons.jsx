@@ -1,49 +1,36 @@
 'use client';
 
-import Image from "next/image";
 import { useTheme } from '../context/ThemeContext';
+import { Sun } from 'lucide-react';
 
 export default function DarkLightButtons() {
   const { isDarkMode, toggleDarkMode } = useTheme();
 
   return (
-    <div className="w-[112px]">
+    <div className="flex items-center gap-2">
       <button
-        aria-label="toggle dark/light mode"
-        className="flex gap-[24px] cursor-pointer hover:bg-[#BED0FF]/30 rounded-full duration-200"
+        type="button"
+        className={`flex items-center justify-center px-4 py-2 rounded-md transition-colors ${
+          isDarkMode 
+            ? 'border border-blue-500 text-blue-500 hover:bg-blue-50' 
+            : 'bg-blue-500 text-white hover:bg-blue-600'
+        }`}
         onClick={toggleDarkMode}
       >
-        {!isDarkMode ? (
-          <>
-            <Image 
-              src="/svg/Light-mode.svg" 
-              width="32" 
-              height="32" 
-              alt="Light-mode icon" 
-            />
-            <Image 
-              src="/svg/Switch.svg" 
-              width="56" 
-              height="32" 
-              alt="Switch to dark mode icon" 
-            />
-          </>
-        ) : (
-          <>
-            <Image 
-              src="/svg/Light-mode-dark.svg" 
-              width="32" 
-              height="32" 
-              alt="Light-mode icon" 
-            />
-            <Image 
-              src="/svg/Switch-dark.svg" 
-              width="56" 
-              height="32" 
-              alt="Switch to dark mode icon" 
-            />
-          </>
-        )}
+        {isDarkMode ? 'O-' : <Sun size={20} />}
+      </button>
+      
+      <button
+        type="button"
+        className={`flex items-center justify-center rounded-md transition-colors w-11 h-[38px] ${
+          isDarkMode 
+            ? 'bg-blue-500 text-white hover:bg-blue-600' 
+            : 'border border-blue-500 text-blue-500 hover:bg-blue-50'
+        }`}
+        onClick={toggleDarkMode}
+        aria-label="Toggle dark mode"
+      >
+        {isDarkMode ? 'I' : 'O'}
       </button>
     </div>
   );

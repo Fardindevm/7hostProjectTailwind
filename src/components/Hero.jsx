@@ -13,7 +13,7 @@ export default function Hero() {
     <div className="flex flex-col lg:flex-row items-center justify-center mt-[24px] lg:mt-[56px] px-[32px] lg:px-[0px] min-w-[375px] lg:w-auto gap-[72px] py-[24px] lg:py-[48px] min-h-[724px] lg:min-h-[476px]">
       <div className="min-w-[311px] lg:w-[576px] flex flex-col gap-[64px]">
         <div className="min-w-[311px] flex flex-col gap-[32px]">
-          <h1 className={`${publicSans.variable} text-[#2140D4] font-sans font-black lg:text-[48px] text-[36px] tracking-[-0.01em] leading-[1] lg:h-[168px] text-center`}>Manage your daily tasks better without all the stress.</h1>
+          <h1 className=" text-[#2140D4] font-sans font-black lg:text-[48px] text-[36px] tracking-[-0.01em] leading-[1] lg:h-[168px] text-center">Manage your daily tasks better without all the stress.</h1>
           <p className='tracking-[-0.01em] leading-[30px] font-[400] text-[20px] lg:text-[24px] text-[#7E8186] text-center'>Change the way you manage your tasks with our revolutionary project management technology.</p>
         </div>
         <div className="flex flex-col md:w-[80%] md:mx-auto lg:flex-row gap-[12px] lg:gap-[24px]">

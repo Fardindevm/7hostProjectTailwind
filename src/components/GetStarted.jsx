@@ -3,14 +3,14 @@ import Image from "next/image";
 export default function GetStartedComponent() {
   return (
     <div className="py-[48px] flex justify-center min-h-[398px] min-w-[375px]">
-      <div className="relative md:w-[1100px] min-h-[558px] md:min-h-[432px] md:rounded-[56px] overflow-hidden bg-[#BED0FF]">
+      <div className="relative md:w-[1100px] min-h-[558px] md:min-h-[432px] md:rounded-[56px] overflow-hidden bg-[var(--GetStarted)]">
         <Image
           src="/Images/Frame_14.png"
           alt="Background"
           fill
           className="absolute inset-0 w-full h-full object-cover"
           style={{
-            filter: "brightness(0.7) contrast(3.0)",
+            filter: "var(--GetStartedBg)",
             mixBlendMode: "multiply"
           }}
         />

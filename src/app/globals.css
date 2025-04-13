@@ -7,44 +7,62 @@ scroll-behavior: smooth;
 :root {
   /* Light mode colors */
   --background: #ffffff;
+  --navbarbg: #FAFBFFCC;
+  --navbarbb: #C8D7FF;
   --textLightmode: #7E8186;
+  --atpText: #00006D;
   --linkLightmode: #4C5D77;
   --normalH1Lightmode: #4F4F4F;
-  --FAQTitleDarkmode: #212121;
+  --FAQTitleLightmode: #212121;
   --FAQLightmode: #858383;
+  --FAQbgLightmode: #EDEDED;
+  --FAQborder: #E5E5EA;
+  --GetStarted: #BED0FF;
+  --GetStartedBg: brightness(0.7) contrast(3.0);
+  --currenciesList: #EDEDED;
+  --FAQbgLightmode1: #F7F7F7;
 
   /* Dark mode colors */
   --DarkBackground: #222222;
+  --navbarDarkbg: #222222CC;
+  --navbarDarkbb: #383D49;
   --textDarkmode: #C8CED6;
+  --atpTextDark: #CDCDFF;
   --linkDarkmode: #81A2D2;
-  --normalH1Lightmode: #C1C1C1;
+  --linkDarkmode1: #81A2D2;
+  --normalH1Darkmode: #C1C1C1;
   --FAQTitleDarkmode: #DDDDDD;
   --FAQDarkmode: #A5A5A5;
+  --FAQbgDarkmode: #434343;
+  --FAQborderDark: #5C5C5C;
+  --GetStartedDark: #292B33;
+  --GetStartedBgDark: brightness(0.75) contrast(1.0);
+  --currenciesListDark: #c8c4c4;
 }
 
-.dark-mode{
+.dark-mode {
   --background: var(--DarkBackground);
   --textLightmode: var(--textDarkmode);
   --linkLightmode: var(--linkDarkmode);
-  --normalH1Lightmode: var(--normalH1Lightmode);
-  --FAQTitleDarkmode: var(--FAQTitleDarkmode);
-  --FAQLightmode: var(--FAQDarkmode)
+  --normalH1Lightmode: var(--normalH1Darkmode);
+  --FAQTitleLightmode: var(--FAQTitleDarkmode);
+  --FAQLightmode: var(--FAQDarkmode);
+  --FAQbgLightmode: var(--FAQbgDarkmode);
+  --navbarbg: var(--navbarDarkbg);
+  --navbarbb: var(--navbarDarkbb);
+  --atpText: var(--atpTextDark);
+  --FAQborder: var(--FAQborderDark);
+  --GetStarted: var(--GetStartedDark);
+  --GetStartedBg: var(--GetStartedBgDark);
+  --currenciesList: var(--currenciesListDark);
+  --FAQbgLightmode1: var(--linkDarkmode1);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+a {
+  color: var(--linkLightmode);
 }
-*/
-
-/* body { */
-  /* background: var(--background);
-  color: var(--foreground);
-  font-family: sans-serif; */
-/* }  */
 
 button {
   cursor: pointer;
+  color: var(--linkLightmode);
 }

@@ -94,7 +94,7 @@ export default function CurrenciesList({ initialData }) {
           </tr>
         </thead>
         <tbody>
-          {currencies.map((coin, index) => (
+          {currencies?.map((coin, index) => (
             <tr key={coin.id} className="w-[1000px] h-[64px] hover:bg-gray-50 transition">
               <td className="font-[600] text-[#777E90] text-[10px] xl:text-[12px] leading-[20px]">{index + 1}</td>
               <td className="pl-[13px] xl:p-[12px] xl:pl-[113px] py-[20px] min-w-[187px] max-w-[187px] xl:max-w-[639px] flex items-center gap-2">

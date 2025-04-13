@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from 'next/link';
-// import { useTheme } from '../context/ThemeContext';
 
 export default function FeatureSection({
   id,
@@ -12,7 +11,6 @@ export default function FeatureSection({
   isReversed = false,
   linkUrl = "/",
 }) { 
-  // const { isDarkMode } = useTheme();
 
   return (
     <div id={id} className="min-w-[375px] 2xl:w-[1440px] min-h-[730px] lg:h-auto mx-auto py-[24px] lg:py-[48px] px-[32px] ">
@@ -22,7 +20,6 @@ export default function FeatureSection({
             : "shadow-[-20px_24px_33px_0px_rgba(119,55,255,0.25)]"
           }`}>
           <Image
-            // src={isDarkMode ? imageUrlDark : imageUrl}
             src={imageUrl}
             alt={imageAlt}
             width={528}
@@ -39,7 +36,7 @@ export default function FeatureSection({
             <h2 className={`font-black text-[36px] ${isReversed ? "text-[#FF9900]" : "text-[#7737FF]"} leading-[100%] tracking-[-1%] lg:w-[520px]`}>
               {title}
             </h2>
-            <p className="text-[24px] leading-[30px] text-[#7E8186] lg:w-[450px] font-normal tracking-[1%]">
+            <p className="text-[24px] leading-[30px] text-[var(--textLightmode)] lg:w-[450px] font-normal tracking-[1%]">
               {description}
             </p>
           </div>
