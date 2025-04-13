@@ -9,9 +9,9 @@ export default function Slideshow() {
   const timerRef = useRef(null);
 
   const slides = [
-    { image: "/images/projectPicture.png", alt: "Slide 1" },
-    { image: "/images/projectPicture.png", alt: "Slide 2" },
-    { image: "/images/projectPicture.png", alt: "Slide 3" },
+    { image: "/Images/projectPicture.png", alt: "Slide 2" },
+    { image: "/Images/projectPicture.png", alt: "Slide 3" },
+    { image: "/Images/projectPicture.png", alt: "Slide 1" },
   ];
 
   const paginate = (newDirection) => {
