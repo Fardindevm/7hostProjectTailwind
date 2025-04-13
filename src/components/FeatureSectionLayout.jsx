@@ -1,16 +1,8 @@
 import Image from "next/image";
 import Link from 'next/link';
 
-export default function FeatureSection({
-  id,
-  imageUrl,
-  imageUrlDark,
-  imageAlt,
-  title,
-  description,
-  isReversed = false,
-  linkUrl = "/",
-}) { 
+export default function FeatureSection({ id, imageUrl, imageUrlDark, title, theme, description, isReversed = false, linkUrl = "/" }) {
+  const imageSrc = theme === "dark" ? imageUrlDark : imageUrl;
 
   return (
     <div id={id} className="min-w-[375px] 2xl:w-[1440px] min-h-[730px] lg:h-auto mx-auto py-[24px] lg:py-[48px] px-[32px] ">
@@ -20,8 +12,8 @@ export default function FeatureSection({
             : "shadow-[-20px_24px_33px_0px_rgba(119,55,255,0.25)]"
           }`}>
           <Image
-            src={imageUrl}
-            alt={imageAlt}
+            src={imageSrc}
+            alt={title + " feature image"}
             width={528}
             height={528}
             className="w-[311px] h-[311px] lg:w-[380px] lg:h-[380px] xl:w-full xl:h-full object-cover"

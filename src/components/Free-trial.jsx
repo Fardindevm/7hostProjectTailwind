@@ -33,7 +33,7 @@ export default function Slideshow() {
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       paginate(1);
-    }, 423500);
+    }, 5000);
   };
 
   useEffect(() => {
@@ -86,7 +86,7 @@ export default function Slideshow() {
             <Image
               src={slides[prevIndex].image}
               alt={slides[prevIndex].alt}
-              fill
+              fill="true"
               sizes="(max-width: 768px) 20px, 137px"
               className="object-cover rounded-[20px]"
             />
@@ -113,7 +113,7 @@ export default function Slideshow() {
                   <img
                     src={slides[current].image}
                     alt={slides[current].alt}
-                    fill
+                    fill="true"
                     quality={100}
                     className="object-cover h-full w-full"
                   />
@@ -142,7 +142,7 @@ export default function Slideshow() {
             <Image
               src={slides[nextIndex].image}
               alt={slides[nextIndex].alt}
-              fill
+              fill="true"
               sizes="(max-width: 768px) 20px, 137px"
               className="object-cover rounded-[20px]"
             />

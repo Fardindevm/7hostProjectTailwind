@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function FardinMohammadi() {
   return (
     <motion.span 
-      className="text-center text-blue-500 font-[700] text-[16px]"
+      className="text-center text-blue-50   0 font-[700] text-[16px]"
     >
       <motion.span
         initial={{ display: "inline-block" }}

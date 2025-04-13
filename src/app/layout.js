@@ -27,7 +27,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const theme = cookies().get('theme')?.value || 'light';
   return (
-    <html lang="en">
+    <html lang="en" data-theme={theme}>
       <body className="bg-[var(--background)] ">
         <ThemeProvider initialTheme={theme}>
           <Navbar />
