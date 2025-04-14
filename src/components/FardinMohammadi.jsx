@@ -9,6 +9,7 @@ export default function FardinMohammadi() {
     >
       <motion.span
         initial={{ display: "inline-block" }}
+        className="text-[var(--FAQTitleLightmode)]"
         whileHover={{ 
           transition: {
             staggerChildren: 0.1

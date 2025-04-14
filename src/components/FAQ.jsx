@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react"; 
 
 export default function FAQComponent() {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(0);
 
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -26,9 +26,9 @@ export default function FAQComponent() {
   ];
 
   return (
-    <div className="py-[48px] min-w-[375px] min-h-[808px] lg:min-h-auto flex gap-10 ">
-      <div className="bg-[var(--FAQbgLightmode)] py-[48px] px-[14px] lg:py-[56px] lg:px-[57px] min-w-[375px] lg:w-[1100px] min-h-[712px] 
-      lg:min-h-[528px] lg:rounded-[56px] mx-auto flex flex-col gap-[22px]">
+    <div className="py-[48px] min-w-[375px] lg:min-h-auto flex gap-10 ">
+      <div className="bg-[var(--FAQbgLightmode)] py-[48px] px-[14px] lg:py-[56px] lg:px-[57px] min-w-[375px] lg:w-[1100px]
+      lg:min-h-[548px] lg:rounded-[56px] mx-auto flex flex-col gap-[22px] min-h-[530px]">
         <h1 className="font-black text-[32px] text-[var(--FAQTitleLightmode)] text-center">FAQ</h1>
         <p className="font-[500] text-[18px] leading-[130%] text-center min-w-[347px] xl:w-[988px] tracking-[0%] text-[var(--textLightmode)]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.

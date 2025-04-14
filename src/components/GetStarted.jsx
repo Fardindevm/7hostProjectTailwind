@@ -24,8 +24,8 @@ export default function GetStartedComponent() {
               <p className="text-[24px] leading-[40px] tracking-[-1%] font-normal text-[#0445B1]">Get started now and take advantage of our 30 day free trial today. No credit card required.</p>
             </div>
             <button 
-            className="md:absolute bottom-0 right-0 bg-[#08C056] min-w-[331px] md:w-[223px] h-[64px] py-[16px] flex gap-[10px] px-[32px] rounded-[48px] cursor-pointer mx-auto justify-center">
-              <span className="text-[20px] font-[700] text-[#F7FAFC] min-w-[90px] md:w-[211px] h-[32px]">
+            className="md:absolute bottom-0 right-0 bg-[#08C056] min-w-[300px] md:w-[223px] h-[64px] py-[16px] flex gap-[10px] px-[32px] rounded-[48px] cursor-pointer mx-auto justify-center hover:opacity-70 duration-300">
+              <span className="text-[20px] font-[700] text-[#F7FAFC] min-w-[90px] md:w-[180px] h-[32px]">
                 Get Started
               </span>
               <Image src="/svg/Go-forward.svg" alt="Go forward image" width="24" height="24" className="w-auto h-auto" />

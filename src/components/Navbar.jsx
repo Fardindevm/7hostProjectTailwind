@@ -21,7 +21,7 @@ export default function Navbar() {
 
         <div className="hidden lg:flex gap-[32px] font-bold">
           <Link href="/">
-            <button className="rounded-[32px] h-[56px] w-[117px] hover:bg-gray-200/80 duration-300">
+            <button className="rounded-[32px] h-[56px] w-[117px] hover:bg-gray-600/40 duration-300">
               <span>Sign In</span>
             </button>
           </Link>

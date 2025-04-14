@@ -12,7 +12,7 @@ export default function MobileMenu() {
 
   return (
     <div className="lg:hidden z-[99999]">
-      <div className="fixed top-0 left-0 right-0 h-[80px] bg-[#FAFBFFCC] backdrop-blur-sm z-[99999]" />
+      <div className="fixed top-0 left-0 right-0 h-[80px] bg-[var(--navbarbg)] backdrop-blur-sm z-[99999]" />
 
       <button
        aria-label="Close and open menu button"
@@ -29,14 +29,14 @@ export default function MobileMenu() {
         />
       </button>
 
-      <div className="fixed top-6 left-4 z-[100000]">
+      <Link href="/" className="fixed top-6 left-4 z-[100000]">
         <Image
           src="/svg/Logo.svg"
           alt="7flow logo"
           width={80}
           height={20}
         />
-      </div>
+      </Link>
 
       <AnimatePresence>
         {isOpen && (
@@ -48,9 +48,9 @@ export default function MobileMenu() {
             className="fixed inset-0 z-[99998] overflow-y-auto"
           >
             <div
-              className="fixed inset-0 bg-white/80 backdrop-blur-sm"
+              className="fixed inset-0 backdrop-blur-sm"
               style={{
-                background: `linear-gradient(180deg, #FAFBFF 0%, rgba(145, 149, 164, 0.95) 100%)`,
+                background: `var(--mobileMenuBg)`,
               }}
             />
 
@@ -93,8 +93,8 @@ export default function MobileMenu() {
                   </button>
                 </Link>
                 <Link href="/" onClick={handleLinkClick}>
-                  <button className="w-full py-4 text-[#4B5563] hover:opacity-70 transition-opacity">
-                    <span className="text-black">Sign In</span>
+                  <button className="w-full py-4 text-[#4C5D77] hover:opacity-70 transition-opacity">
+                    <span className="text-[#4C5D77] font-[700]">Sign In</span>
                   </button>
                 </Link>
               </div>

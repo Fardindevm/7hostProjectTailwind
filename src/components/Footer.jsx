@@ -34,7 +34,7 @@ export default function FooterComponent() {
                 <Link
                   key={text}
                   href={href}
-                  className="block text-lg font-bold text-[#4C5D77] hover:text-blue-600 transition-colors duration-200 leading-[24px] h-[24px] w-[208px] text-[16px]"
+                  className="block text-lg font-bold text-[#4C5D77] leading-[24px] h-[24px] w-[208px] text-[16px] hover:opacity-60 duration-500 "
                 >
                   {text}
                 </Link>
@@ -46,7 +46,7 @@ export default function FooterComponent() {
                 <Link
                   key={text}
                   href="#"
-                  className="block text-lg font-bold text-[#4C5D77] hover:text-blue-600 transition-colors duration-200 leading-[24px] h-[24px] w-[208px] text-[16px]"
+                  className="block text-lg font-bold text-[#4C5D77] leading-[24px] h-[24px] w-[208px] text-[16px] hover:opacity-60 duration-500"
                 >
                   {text}
                 </Link>

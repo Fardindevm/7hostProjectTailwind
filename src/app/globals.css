@@ -21,6 +21,10 @@ scroll-behavior: smooth;
   --GetStartedBg: brightness(0.7) contrast(3.0);
   --currenciesList: #EDEDED;
   --FAQbgLightmode1: #F7F7F7;
+  --ScheduleButtonBorder: none;
+  --mobileMenuBg: linear-gradient(180deg, #FAFBFF 0%, rgba(145, 149, 164, 0.95) 100%);
+  --slideShowTitle: #212121;
+
 
   /* Dark mode colors */
   --DarkBackground: #222222;
@@ -38,6 +42,9 @@ scroll-behavior: smooth;
   --GetStartedDark: #292B33;
   --GetStartedBgDark: brightness(0.75) contrast(1.0);
   --currenciesListDark: #c8c4c4;
+  --ScheduleButtonBorderDark: 1px solid #60677A;
+  --mobileMenuBgDark: linear-gradient(180deg, #1a1a2e 0%, rgba(26, 26, 46, 0.95) 100%);
+  --slideShowTitleDark: #FFFFFF;
 }
 
 .dark-mode {
@@ -56,13 +63,16 @@ scroll-behavior: smooth;
   --GetStartedBg: var(--GetStartedBgDark);
   --currenciesList: var(--currenciesListDark);
   --FAQbgLightmode1: var(--linkDarkmode1);
+  --ScheduleButtonBorder: var(--ScheduleButtonBorderDark);
+  --mobileMenuBg: var(--mobileMenuBgDark);
+  --slideShowTitle: var(--slideShowTitleDark)
 }
 
-a {
-  color: var(--linkLightmode);
+head, body {
+  overflow-x: hidden;
 }
 
-button {
+button:not(.showMore) {
   cursor: pointer;
   color: var(--linkLightmode);
 }

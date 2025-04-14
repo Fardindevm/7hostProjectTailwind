@@ -65,35 +65,40 @@ export default function Slideshow() {
   const nextIndex = (current + 1) % slides.length;
 
   return (
-    <div className="py-[48px] pb-[24px] px-[32px] mt-7 md:mt-15 md:px-0 min-h-[415px] md:h-auto ">
+    <div className="py-[48px] pb-[24px] px-[32px] mt-7 md:mt-15 md:px-10 lg:px-0 min-h-[415px] md:h-auto ">
       <div className="w-full min-w-[311px] md:max-w-[1110px] md:mx-auto flex flex-col gap-[20px] md:gap-[48px]">
-        <div className="md:hidden h-[135.15px] flex flex-col gap-[10.15px]">
-          <h2 className="text-[36px] leading-[100%] tracking-[-1%] font-black mb-2 drop-shadow-md">
-            Risk-free 30 day trial to <br />level up your team's productivity.
+        <div className="md:hidden h-[135.15px] mt-20 -mb-10 sm:-mb-25 md:mb-0 flex flex-col gap-[10.15px]">
+          <h2 className="text-[36px] leading-[100%] text-[var(--normalH1Lightmode)] tracking-[-1%] font-black mb-2 drop-shadow-md">
+            Risk-free 30 day trial to <br className="hidden md-block"/>level up your team's productivity.
           </h2>
-          <p className="text-[24px] leading-[40px] leading-[-1%] font-normal drop-shadow-md">
+          <p className="text-[24px] leading-[40px] text-[var(--textLightmode)] leading-[-1%] font-normal drop-shadow-md">
             Get started now and take advantage of our 30 day free trial
             today. No credit card required.
           </p>
         </div>
-        <div className="relative top-53 md:top-0 max-h-[432px] md:h-[432px] flex items-center md:justify-center gap-[4px] overflow-hidden rounded-[10px]">
+        <div className="relative top-53 md:top-0 max-h-[432px] md:h-[432px] flex items-center md:justify-center gap-[4px] overflow-hidden">
           {/* Prev image */}
           <div
             onClick={() => goToSlide(prevIndex)}
-            className="relative min-w-[19.83px] md:w-[137px] h-[302px] md:h-full opacity-50 cursor-pointer transition-transform"
+            className="relative min-w-[19.83px] md:w-[70px] lg:w-[137px] h-[290px] md:h-[calc(100%-12px)] lg:h-full opacity-50 cursor-pointer transition-transform"
           >
-            <div className="absolute inset-0 bg-black/40 rounded-[20px] z-10" />
+            <div className="absolute inset-0 bg-black/40 rounded-[20px] z-10" style={{
+                borderRadius: "0 20px 20px 0"
+            }}/>
             <Image
               src={slides[prevIndex].image}
               alt={slides[prevIndex].alt}
               fill="true"
               sizes="(max-width: 768px) 20px, 137px"
               className="object-cover rounded-[20px]"
+              style={{
+                borderRadius: "0 20px 20px 0"
+              }}
             />
           </div>
 
           {/* Main slide */}
-          <div className="relative w-full md:w-[calc(100%-274px)] h-[302px] md:h-full md:mx-[10px] overflow-hidden rounded-[20px]">
+          <div className="relative w-full md:w-[calc(100%-294px)] h-[302px] md:h-full md:mx-[10px] overflow-hidden rounded-[20px]">
             <AnimatePresence custom={direction} mode="wait">
               <motion.div
                 key={current}
@@ -107,7 +112,7 @@ export default function Slideshow() {
               >
                 <div className="relative w-full h-full">
                   {/* Dark overlay */}
-                  <div className="absolute inset-0 bg-black/40 rounded-[17.76px] md:rounded-[56px] z-10" />
+                  <div className="absolute inset-0 bg-black/40 rounded-[17.76px] z-10" />
 
                   {/* Image */}
                   <img
@@ -119,7 +124,7 @@ export default function Slideshow() {
                   />
 
                   {/* Text content */}
-                  <div className="hidden md:block absolute top-[118px] left-[63.5px] w-[689px] h-[196px] text-white flex flex-col gap-[32px] z-20">
+                  <div className="hidden md:block absolute top-[118px] left-[63.5px] lg:w-[689px] h-[196px] text-white flex flex-col gap-[32px] z-20">
                     <h2 className="text-[36px] leading-[100%] tracking-[-1%] font-black mb-2 drop-shadow-md">
                       Risk-free 30 day trial to <br />level up your team's productivity.
                     </h2>
@@ -136,15 +141,22 @@ export default function Slideshow() {
           {/* Next image */}
           <div
             onClick={() => goToSlide(nextIndex)}
-            className="relative min-w-[19.83px] md:w-[137px] h-[302px] md:h-full opacity-50 cursor-pointer transition-transform"
+            className="relative min-w-[19.83px] md:w-[70px] lg:w-[137px] h-[290px] md:h-[calc(100%-12px)] lg:h-full opacity-50 cursor-pointer transition-transform "
           >
-            <div className="absolute inset-0 bg-black/40 rounded-[20px] z-10" />
+            <div className="absolute inset-0 bg-black/40 z-10"
+              style={{
+                borderRadius: "20px 0 0 20px"
+              }}
+            />
             <Image
               src={slides[nextIndex].image}
               alt={slides[nextIndex].alt}
               fill="true"
               sizes="(max-width: 768px) 20px, 137px"
-              className="object-cover rounded-[20px]"
+              className="object-cover "
+              style={{
+                borderRadius: "20px 0 0 20px"
+              }}
             />
           </div>
         </div>

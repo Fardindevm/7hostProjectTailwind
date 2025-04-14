@@ -102,8 +102,8 @@ export default function CurrenciesList({ initialData }) {
                 <Link
                   href={`/currencies/${coin.id}`}
                   scroll={false}
-                  replace={true}      // Add this
-                  className="text-[#23262F] hover:underline font-[500] text-start text-[12px] xl:text-[14px] leading-[24px]"
+                  replace={true}      
+                  className="text-[#23262F] font-[500] text-start text-[12px] xl:text-[14px] leading-[24px]"
                 >
                   {coin.name} <span className='text-[#777E90] font-bold text-[14px] leading-[24px]'>{coin.symbol.toUpperCase()}</span>
                 </Link>
@@ -124,7 +124,7 @@ export default function CurrenciesList({ initialData }) {
             aria-label='button for fetching more lists'
             onClick={fetchMore}
             disabled={loading || cooldown > 0 || !hasMore}
-            className={`w-[190px] h-[44px] xl:w-[342px] xl:h-[56px] mx-auto px-[32px] py-[16px] rounded-full font-[700] text-[16px] flex items-center justify-center gap-2 transition ${loading || cooldown > 0 || !hasMore
+            className={`w-[245px] h-[46px] xl:w-[362px] showMore xl:h-[56px] mx-auto px-[32px] py-[16px] rounded-full font-[700] text-[16px] flex items-center justify-center gap-2 transition ${loading || cooldown > 0 || !hasMore
               ? 'bg-[#9C9C9C] text-gray-200 cursor-not-allowed'
               : 'bg-[#2140D4] hover:bg-[#65BBE5] text-[#F7FAFC] cursor-pointer'
               }`}
